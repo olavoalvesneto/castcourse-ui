@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0%;
+  font-family: Arial, Arial, Helvetica, sans-serif;
+  color: #404C51
+}
+a {
+  color: #337ab7;
+  text-decoration: #337ab7
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+label {
+  font-weight: bold;
+}
+
+.rotulo {
+  margin: 0 .5em;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+    margin: 0 auto;
+  }
+}
+
+.col-texto-curto-header {
+  width: 200px;
+}
+.col-texto-curto-content {
+  text-align: left;
+}
+
+.col-numero-header {
+  width: 100px;
+}
+.col-numero-content {
+  text-align: center;
+}
+
+.col-data-header {
+  width: 120px;
+}
+
+.col-data-content {
+  text-align: center;
+}
+
+.col-acoes-header {
+  width: 100px;
+}
+
+.col-acoes-content {
+  text-align: center;
+}
+
+.espaco-icones {
+  margin: 0 .25em!important;
+}

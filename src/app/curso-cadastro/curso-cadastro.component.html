@@ -1,0 +1,58 @@
+<div class="container">
+  <form #f="ngForm" autocomplete="off">
+
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <h1>Novo Curso</h1>
+      </div>
+
+      <div class="ui-g-12 ui-md-4 ui-fluid">
+        <label>Categoria</label>
+        <p-dropdown [options]="categorias"></p-dropdown>
+      </div>
+
+      <div class="ui-g-12 ui-md-8 ui-fluid">
+          <label>Descrição</label>
+          <input pInputText type="text" name="descricao"
+            ngModel #descricao="ngModel" required minlength="5">
+
+          <app-message [control]="descricao" error="required"
+            text="Informe uma descrição"></app-message>
+
+          <app-message [control]="descricao" error="minlength"
+            text="Mínimo de {{ descricao.errors?.minlength?.requiredLength }} caracteres"></app-message>
+
+      </div>
+
+      <div class="ui-g-6 ui-md-4 ui-fluid">
+        <label>Data de Início</label>
+        <p-calendar dateFormat="dd/mm/yy" name="dataInicio"
+        ngModel #dataInicio="ngModel" required></p-calendar>
+
+        <app-message [control]="dataInicio" error="required"
+        text="Informe a Data de Início"></app-message>
+
+      </div>
+      <div class="ui-g-6 ui-md-4 ui-fluid">
+        <label>Data de Término</label>
+        <p-calendar dateFormat="dd/mm/yy" name="dataTermino"
+        ngModel #dataTermino="ngModel" required></p-calendar>
+
+        <app-message [control]="dataTermino" error="required"
+        text="Informe a Data de Término"></app-message>
+
+      </div>
+      <div class="ui-g-6 ui-md-4 ui-fluid">
+        <label>Qtde. de Alunos</label>
+        <input pInputText type="text">
+      </div>
+
+      <div class="ui-g-12">
+        <button pButton class="espaco-icones" type="submit" label="Salvar" [disabled]="f.invalid"></button>
+        <button pButton type="button" label="Novo" class="ui-button-info"></button>
+        <a class="espaco-icones" href="javascript:;">Voltar para a pesquisa</a>
+      </div>
+    </div>
+
+  </form>
+</div>
